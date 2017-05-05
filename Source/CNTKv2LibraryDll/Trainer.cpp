@@ -61,7 +61,7 @@ namespace CNTK
         {
             m_aggregatedLossFunction = m_lossFunction;
             m_trainingSampleCountVar = m_lossFunction->RootFunction()->Inputs()[0];
-            if (model->Output() != m_trainingSampleCountVar)
+            if (model && model->Output() != m_trainingSampleCountVar)
                 combinedFunctionArgs.push_back(m_trainingSampleCountVar);
         }
 
