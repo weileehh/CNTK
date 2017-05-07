@@ -26,9 +26,9 @@ def download_and_untar(url, filename, filesize):
         print ('Done.')
     finally:
         os.remove(filename)
-    return;
     
 if __name__ == "__main__":
+    os.chdir(os.path.abspath(os.path.dirname(__file__)))
     directory = "./VOCdevkit/VOC2007"
     if not os.path.exists(directory):
         download_and_untar(
